@@ -54,14 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
   ]
 
   cardArray.sort(() => 0.5 - Math.random())
-
+  
   const grid = document.querySelector('.grid')
   const resultDisplay = document.querySelector('#result')
   let cardsChosen = []
   let cardsChosenId = []
   let cardsWon = []
-
-  //create your board
+  resultDisplay.textContent = cardsWon.length
+  //creating board
   function createBoard() {
     for (let i = 0; i < cardArray.length; i++) {
       const card = document.createElement('img')
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  //check for matches
+  //match-making
   function checkForMatch() {
     const cards = document.querySelectorAll('img')
     const optionOneId = cardsChosenId[0]
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('You have clicked the same image!')
     }
     else if (cardsChosen[0] === cardsChosen[1]) {
-      //alert('You found a match')
+      
       cards[optionOneId].setAttribute('src', 'images/blue.png')
       cards[optionTwoId].setAttribute('src', 'images/blue.png')
       cards[optionOneId].removeEventListener('click', flipCard)
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       cards[optionOneId].setAttribute('src', 'images/blank.png')
       cards[optionTwoId].setAttribute('src', 'images/blank.png')
-      //alert('Sorry, try again')
+      
     }
     cardsChosen = []
     cardsChosenId = []
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  //flip your card
+  //flip the card
   function flipCard() {
     let cardId = this.getAttribute('data-id')
     cardsChosen.push(cardArray[cardId].name)

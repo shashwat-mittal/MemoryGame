@@ -1,10 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 
+html{
+  width: 100vw;
+  height: 100vh;
+}
 body{
 background-color:#03A9F4;
+
 font-family: 'Acme', sans-serif;
+text-align: center;
+align-items: center;
+display: flex;
+flex-direction: column;
 justify-content: center;
-align-content: center;
+margin: 0;
+padding:0;
+width:100%;
 }
 .score{
   font-size: 4em;
@@ -13,18 +24,27 @@ align-content: center;
 .head{
   font-size: 4em;
   color:mediumvioletred;
+  text-align: center;
 }
 .grid {
   display: flex;
   flex-wrap: wrap;
-  width: 400px;
-  height: 300px;
   justify-content: center;
   align-content: center;
+  max-width: 400px;
+  padding: 0 1em;
+}
+.rule{
+  font-size: 2em;
+  color:purple;
+  text-align: center;
+}
+@media screen and (max-width: 450px) {
+.head{
+  font-size: 3em;
+}
+.score{
+  font-size: 3em;
 }
 
-@media (max-width: 600px) {
-  .score{
-    font-size: 7em;
-  }
 }
