@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+body{
+background-color:#03A9F4;
+font-family: 'Acme', sans-serif;
+justify-content: center;
+align-content: center;
+}
+.score{
+  font-size: 4em;
+  color:navy;
+}
+.head{
+  font-size: 4em;
+  color:mediumvioletred;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 300px;
+  justify-content: center;
+  align-content: center;
+}
+
+@media (max-width: 600px) {
+  .score{
+    font-size: 7em;
+  }
+}
